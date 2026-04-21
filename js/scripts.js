@@ -1,0 +1,30 @@
+/*!
+    * Start Bootstrap - SB Admin v7.0.7 (https://startbootstrap.com/template/sb-admin)
+    * Copyright 2013-2023 Start Bootstrap
+    * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-sb-admin/blob/master/LICENSE)
+    */
+    // 
+// Scripts
+// 
+
+window.initSidebarToggle = function () {
+
+    const sidebarToggle = document.querySelector('#sidebarToggle');
+
+    if (sidebarToggle) {
+
+        // remove old handlers (important)
+        sidebarToggle.onclick = null;
+
+        sidebarToggle.onclick = function (event) {
+            event.preventDefault();
+
+            document.body.classList.toggle('sb-sidenav-toggled');
+
+            localStorage.setItem(
+                'sb|sidebar-toggle',
+                document.body.classList.contains('sb-sidenav-toggled')
+            );
+        };
+    }
+};
